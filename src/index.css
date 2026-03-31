@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 50% 96%;
+    --foreground: 20 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 20% 15%;
+
+    --primary: 140 45% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 35 80% 52%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 30% 92%;
+    --muted-foreground: 20 10% 45%;
+
+    --accent: 6 70% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 25% 85%;
+    --input: 35 25% 85%;
+    --ring: 140 45% 28%;
+
+    --radius: 0.75rem;
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .card-menu {
+    box-shadow: 0 4px 15px hsla(20 20% 15% / 0.1);
+    @apply bg-card rounded-xl overflow-hidden;
+  }
+
+  .section-title {
+    @apply text-lg font-extrabold text-foreground text-center relative inline-block;
+    font-family: var(--font-heading);
+  }
+
+  .section-title::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 right-0 h-0.5 rounded-full;
+    background: hsl(var(--accent));
+  }
+
+  .wa-float {
+    @apply fixed bottom-5 right-5 z-50 bg-primary text-primary-foreground rounded-full p-3 shadow-lg;
+    box-shadow: 0 4px 20px hsla(140 45% 28% / 0.4);
+  }
+
+  .btn-order {
+    @apply bg-primary text-primary-foreground font-semibold py-1 px-3 rounded-full text-[10px] transition-transform hover:scale-105;
+  }
+}
