@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Chicken Kriuk Warzuqnii project
 
 TODO: Document your project here
